@@ -65,8 +65,31 @@ public class Thiseas{
                     }
                 }
             }
+
         }catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
+
+     //function that returns true if the maze containts "E" in it and has the correct dimensions of the maze
+     static boolean isSafe(String[][] maze,int x,int y) throws FileNotFoundException{
+        //reads file
+
+
+        //check if the maze in the text has correct numbers
+        if(x!=maze.length||y!=maze[0].length){
+            System.out.println("Error: The dimensions given on the first line are not the same with the size of the Maze!");
+            return false;
+        }
+        //check if there is "E" in the maze
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze[0].length; j++) {
+                if(maze[i][j].contains("E")){
+                    return true;
+                }
+                }
+            }
+            System.out.println("Error: Maze does not contain the starting point \"E\"!");
+            return false;
+        }
 }
