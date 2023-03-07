@@ -66,6 +66,13 @@ public class Thiseas{
                 }
             }
 
+            if(isSafe(maze,Integer.parseInt(maze_coord[0]),Integer.parseInt(maze_coord[1]))){
+                solveMaze(maze,Integer.parseInt(Ecoord[0]), Integer.parseInt(Ecoord[1]),visited);
+            }
+
+             scan.close();   
+             sc.close();
+
         }catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -96,7 +103,7 @@ public class Thiseas{
     //function that gives the coordinates of the exit
     static boolean solveMaze(String maze[][], int Ex, int Ey,boolean[][]visited){       
 
-        StringStackImpl path = new StringStackImpl();
+        StringStackImplemnt path = new StringStackImplemnt();
 
         //curent = 5, 4
         String current = Ex + ", " + Ey;        
